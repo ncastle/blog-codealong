@@ -27,3 +27,23 @@ ul {
   padding: 1rem;
   list-style-type: none;
 }
+
+li {
+  font-size: 1.2em;
+  padding: 5px 0;
+  text-transform: uppercase;
+  border: 1px solid hsl(33, 100%, 50%);
+  width: 40%;
+  margin: 3px;
+  background-color: blanchedalmond;
+  text-align: center;
+}
+a {
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover, a:visited {
+  color: red;
+}

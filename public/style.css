@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 1rem;
+  color: gold;
+  background-color: blueviolet;
+  margin-bottom: 4px;
+}
+
+form {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid gray;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+form * {
+  font-size: 1.2rem;
+}
+
+ul {
+  padding: 1rem;
+  list-style-type: none;
+}

@@ -116,5 +116,33 @@ function createArticle(articleId, params, response) {
   })
 }
 
+// set up search route
+app.get('/search', (request, response) => {
+  // join public directory with search.html, and send file
+  response.sendFile($path.join(publicDir, 'search.html'));
+});
+
+app.get('/search.json', (request, response) => {
+  // send search query to searchArticles function and give to results
+  let results = searchArticles(request.query);
+  response.type('application/json');
+  response.send(JSON.stringify(results));
+});
+
+// function that searches for articles based on the parameter passed
+// and returns the results of that seach
+function searchArticles(params) {
+  // load all articles into memory, filter
+  let results = allArticles().filter((article) => {
+    if (params.author) {
+      let articleAuthor = article.author || '';
+      let targetAuthor = params.author || '';
+      return articleAuthor.toLowerCase().includes(targetAuthor.toLowerCase());
+    }
+  });
+  return results;
+}
+
+
 // tell app where to listen -> almost always goes on bottom of file
 app.listen(port, () => console.log(`Blog app listening on port ${port}!`));

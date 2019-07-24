@@ -4,11 +4,17 @@
   box-sizing: border-box;
 }
 
-h1 {
+#header {
   padding: 1rem;
   color: gold;
   background-color: blueviolet;
   margin-bottom: 4px;
+}
+#header > a {
+  color: gold;
+}
+#header > a:visited {
+  color: gold;
 }
 
 form {
